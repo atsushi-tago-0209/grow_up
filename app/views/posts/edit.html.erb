@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <%= form_with model: @post, class: :form, local: true do |form| %>
+    <div class="content__title">
+      イベントの訂正
+    </div>
+
+ 
+    <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
+    <%= form.text_area :content, placeholder: :ブログ本文, class: :form__text %>
+    <%= form.submit '投稿する', class: :form__btn %>
+  <% end %>
+  </div>

@@ -1,0 +1,63 @@
+<div class="new">
+  
+  <div class ="left-box">
+
+    <div class="title-box">
+     <%= form_with model: @post,local: true do |form| %>
+
+      <div class ="title">
+        <p name="eventname">イベント名</p>
+        <%= form.text_field :title, name="text"><br>
+      </div>
+
+      <div class ="eventintroduce-info">
+        <p class="event" name="eventintroduce">イベントの内容</p>
+        <div class="introduce">
+        <%= form.text_area :name name="info" rows="11" cols="70"%>
+        </div> 
+      </div>   
+
+    </div>
+
+    <div class="yohaku">
+    </div>
+
+    <div class ="image-box">
+
+      
+    </div>
+  
+  </div>
+ 
+  <div class="right-box">
+    <div class="details">
+
+      <div class ="date">イベント日時<br>
+      <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#test-modal">日付を選択</button>
+      <input id="date-form" type="text" placeholder="日付を設定" readonly>
+
+        <input type="text-date" name="date">
+      </div>
+
+      <div class ="place">場所<br>
+        <input type="text-place" name="place">
+      </div>
+    
+      <div class="target">
+        <p>対象者</p>
+        <input id="1year" type="checkbox" name="study" value="初任者"><label for="1year">初任者</label>
+        <input id="5year" type="checkbox" name="study" value="５年目まで"><label for="5year">５年目まで</label>
+        <input id="all" type="checkbox" name="study" value="全て"><label for="all">全て</label>
+      </div>
+
+      <div class ="belongings">持ち物<br>
+         <textarea name="info" rows="6" cols="30"></textarea><br>
+      </div>
+
+    </div>
+
+    <%= form.submit '公開する', class: :form__btn %> 
+    <% end %>
+  </div>
+
+</div>

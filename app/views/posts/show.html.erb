@@ -1,0 +1,32 @@
+<div class= "wrapper">
+  <div class="studyTitle">
+    <%= @post.title %>
+  </div>
+  <div class="studytPlace">
+    <%= @post.place %>
+  </div>
+  <div class="studyBelongins">
+  <%= @post.belongings %>
+  </div>
+  <div class="studyTarget">
+    <%= @post.target %>
+  </div>
+  <div class="studySentence">
+  <%= simple_format @post.sentence %>
+  </div>
+  <div class="studySchedule">
+    <%= @post.schedule %>
+  </div>
+  <div class="studyImage">
+    <%= @post.image %>
+  </div>
+  <div class="studyTime">
+    <%= @post.time %>
+  </div>
+  <% if user_signed_in? && current_user.id == @post.user_id %>
+  <div class="studyManage">
+  <%= link_to "編集", edit_post_path(@post.id), class: "studyManage__edit" %>
+  <%= link_to "削除", post_path(@post.id), method: :delete, class: "studyManage__delete" %>
+  <% end %>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GrowUp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+    <script>src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+   <div class="wrapper">
+    <header class ="study-header">
+
+      <div class ="title">
+      <%= link_to "GrowUp", '/', class: "center-title" %>
+      </div>
+
+      <div class ="right-btn">
+        <% if user_signed_in? %>
+          <%= link_to current_user.nickname, user_path(current_user), class: "user-btn" %>
+          <%= link_to "イベント作成", new_post_path, class: "new_event" %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "right-btn-new" %>
+        <% else %>
+        <%= link_to "ログイン", new_user_session_path, class: "new_event" %> 
+        <%= link_to "新規登録", new_user_registration_path, class: "right-btn-new" %>
+        <% end %> 
+      </div>
+
+    </header>
+
+    <div class = "study">
+      <%= yield %>
+    </div>
+
+     <div class ="study-footer">
+        <p class="sub-title">教師と教師をつなぐ研修支援プラットフォーム</a>
+    </div>
+     
+  </body>
+</html>
