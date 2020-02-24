@@ -1,63 +1,63 @@
-
 .wrapper{
   min-height: 100vh;
   position: relative;
+  padding-bottom: 50px;
+  box-sizing: border-box; 
   .study-header{
-    height:100px;
+    height:150px;
     background-color: white;
     justify-content: space-between;
     .title{
       font-size: 50px;
       font-family: sans-serif;
       margin: 0 43%;
-    }
       .center-title{
         text-decoration: none;
         color: #668ad8;
         margin-bottom: 15px;
       }
-   
-    .right-btn{
+    }
+    .btn{
       margin: 0 auto;
       display: flex;
       font-family: "Avenir","Arial",sans-serif;
       text-align: center;
       line-height: 30px;
       width: 400px;
-        a.new_event{
-          margin: 10px 10px;
-          font-family: 'Reem Kufi', sans-serif;
-          font-size: 17px;
-          text-align: center;
-          line-height: 30px;
-          width: 150px;
-          height: 30px;
-          text-decoration: none;
-          color: black;
-          border-bottom: solid 4px #627295;
-          border-radius: 3px;
-          -webkit-transition: all .3s;
-          transition: all .3s;
-        }
-        .new_event:hover {
-          background-color: #d3d3d3;
-        }      
-        a.right-btn-new{
-        margin:11px 10px;
+      a.new_event{
+        margin: 10px 10px;
         font-family: 'Reem Kufi', sans-serif;
-        font-size: 17x;
-        border-bottom: solid 4px #627295;
-        border-radius: 3px;
+        font-size: 17px;
         text-align: center;
         line-height: 30px;
-        height: 30px;
         width: 150px;
+        height: 30px;
         text-decoration: none;
         color: black;
+        border-bottom: solid 4px #627295;
+        border-radius: 3px;
         -webkit-transition: all .3s;
         transition: all .3s;
       }
-      a.right-btn-new:hover {
+      .new_event:hover {
+        background-color: #d3d3d3;
+      }      
+      a.btn-new{
+      margin:11px 10px;
+      font-family: 'Reem Kufi', sans-serif;
+      font-size: 17x;
+      border-bottom: solid 4px #627295;
+      border-radius: 3px;
+      text-align: center;
+      line-height: 30px;
+      height: 30px;
+      width: 150px;
+      text-decoration: none;
+      color: black;
+      -webkit-transition: all .3s;
+      transition: all .3s;
+     }
+      a.btn-new:hover {
         background-color: #d3d3d3;
       }    
       a.user-btn{
@@ -78,15 +78,14 @@
       a.user-btn:hover {
         background-color: #d3d3d3;
       }  
-      
     } 
   }
   .study{
-    min-height: 100%;
+    // min-height: 100%;
     width: 100vw;
     .study-main{
       height: calc(100vh - 100px);
-      overflow: scroll;
+      // overflow: scroll;
       display: block;
       box-sizing: border-box;
       .study-image{
@@ -94,16 +93,10 @@
         background-size: cover;
         background-image: url(marvin-meyer-SYTO3xs06fU-unsplash.jpg);
       }
-        height:50%;
-        width:100%;
-        object-fit: cover;
-        position: relative;
-      }
       .study-main-new{
         width: 100%;
         height: 500px;
         display: flex;
-      
         .study-main-left{
           height: 100vh;
           width: 70%;
@@ -218,7 +211,6 @@
               
           }
         }
-      
         .main-right{
         width: 30%;
         height: 100vh;
@@ -239,7 +231,7 @@
           display: table;
           margin-top: 40px;
           background-color: white;
-          height: 100%;
+          height: 60%;
           width: 100%;
         }
           /* 日本地図画像（スマホ対応用） */
@@ -255,7 +247,7 @@
             z-index: 1;
             box-sizing: border-box;
             cursor: pointer;
-           border: 3px solid #333333;
+            border: 3px solid #333333;
             border-radius: 5px;
             background-color: #FFF;
             padding: 0.2em auto;
@@ -330,7 +322,7 @@
             -webkit-flex-wrap: wrap;
             flex-wrap: wrap;
             width: 90%;
-           background-color: #FFF;
+          background-color: #FFF;
           }
           .japan_map .pref_list > div{
               box-sizing: border-box;
@@ -368,9 +360,9 @@
           line-height:50px;
         }
         .btn-social-square:hover {
-           -webkit-transform: translateY(-5px);
+          -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
-         }
+        }
         .btn-social-square--twitter {
           background: #22b8ff;
           margin-left: 240px;
@@ -382,16 +374,19 @@
         }
       }
     }
-    
   }
   .study-footer{
     height: 50px;
     width: 100vw;
     background-color: black;
-    line-height: 50px;
-    margin: auto;
+    margin-top: auto;  
+    position: absolute;
+    bottom: 0;
     .sub-title{
       color: white;
       font-size: 10px;
+      line-height: 50px;
+      
     }
   }
+}

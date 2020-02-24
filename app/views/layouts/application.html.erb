@@ -11,33 +11,28 @@
   </head>
 
   <body>
-   <div class="wrapper">
-    <header class ="study-header">
-
-      <div class ="title">
-      <%= link_to "GrowUp", '/', class: "center-title" %>
+    <div class="wrapper">
+      <div class ="study-header">
+        <div class ="title">
+          <%= link_to "GrowUp", '/', class: "center-title" %>
+        </div>
+        <div class ="btn">
+          <% if user_signed_in? %>
+            <%= link_to current_user.nickname, user_path(current_user), class: "user-btn" %>
+            <%= link_to "イベント作成", new_post_path, class: "new_event" %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-new" %>
+          <% else %>
+            <%= link_to "ログイン", new_user_session_path, class: "new_event" %> 
+            <%= link_to "新規登録", new_user_registration_path, class: "btn-new" %>
+          <% end %> 
+        </div>
       </div>
-
-      <div class ="right-btn">
-        <% if user_signed_in? %>
-          <%= link_to current_user.nickname, user_path(current_user), class: "user-btn" %>
-          <%= link_to "イベント作成", new_post_path, class: "new_event" %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "right-btn-new" %>
-        <% else %>
-        <%= link_to "ログイン", new_user_session_path, class: "new_event" %> 
-        <%= link_to "新規登録", new_user_registration_path, class: "right-btn-new" %>
-        <% end %> 
+      <div class = "study">
+        <%= yield %>
       </div>
-
-    </header>
-
-    <div class = "study">
-      <%= yield %>
+      <div class ="study-footer">
+        <p class="sub-title">教師と教師をつなぐ研修支援プラットフォーム</p>
+      </div>
     </div>
-
-     <div class ="study-footer">
-        <p class="sub-title">教師と教師をつなぐ研修支援プラットフォーム</a>
-    </div>
-     
   </body>
 </html>

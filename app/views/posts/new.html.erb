@@ -22,7 +22,7 @@
       
         <%= form.label :image, for: "file-input", class: "fa fa-picture-o" do %>
           <%= form.file_field :image, id: "file-input", style: "display: none;" %>
-        <%end%>
+        <% end %>
          <p>イメージ写真を追加</p>
       </div>
     </div>
@@ -37,10 +37,10 @@
       </div>    
       <div class="target">
         <%= form.label :対象者 %>
-        <% ["初任者","５年目まで","１０年目まで","全て"].each do |target| %>
-        <%= form.check_box :target, {multiple: true},target, nil %>
-        <%= target %>
-        <% end %>
+        <%# <% ["初任者","５年目まで","１０年目まで","全て"].each do |target| %> %>
+        <%= form.collection_check_boxes :target_ids,Target.all,:id,:name %>
+        <%# <%= target %>
+        <%# <% end %> 
       </div>
 
       <div class ="belongings">持ち物<br>

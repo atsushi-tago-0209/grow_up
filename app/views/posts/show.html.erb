@@ -27,6 +27,8 @@
   <div class="studyManage">
   <%= link_to "編集", edit_post_path(@post.id), class: "studyManage__edit" %>
   <%= link_to "削除", post_path(@post.id), method: :delete, class: "studyManage__delete" %>
+  <% else %>
+  <%= link_to"申し込む",%>
   <% end %>
   </div>
 </div>
