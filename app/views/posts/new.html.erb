@@ -24,6 +24,17 @@
           <%= form.file_field :image, id: "file-input", style: "display: none;" %>
         <% end %>
          <p>イメージ写真を追加</p>
+          <%= f.label :"images_attributes_#{@post.images.length}_image", class: "label-box", id: "label-box--#{@post.images.length}" do %> 
+          <pre class="label-box__text-visible"> クリックしてファイルをアップロード<pre>
+          <%end%>
+            <%= f.fields_for :images do |f| %>
+
+          <%= f.file_field :image_url, class: "hidden-field" %>
+          <%= f.check_box:_destroy, class: "hidden-checkbox" %>
+
+          - @item.images.length.upto(4) do |f|
+          %input{name: "item[images_attributes][#{i}][image_url]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+          <%end%>
       </div>
     </div>
 
