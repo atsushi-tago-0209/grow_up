@@ -8,11 +8,12 @@
         <div class="container">
           <%# <%= link_to post.user.nickname, user_path(post.user), class: "content__right__bottom--userName--btn" %>
           <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-          <form method="get" action="http://www.google.co.jp/search"  class="search_container">
-          <input type="text" size="25" placeholder="キーワード検索" value="">
-          <input type="submit" value="&#xf002">
-          <input type="hidden" name="sitesearch" value="web-officer.com">
-          </form>
+          <%= search_form_for @q do |f| %>
+            <%= f.label :title_or_place_or_target, "Keyword" %>
+            <%= f.search_field :title_or_place_or_target_cont %>
+
+            <%= f.submit "キーワード検索", class: 'record-form__submit-button' %>
+          <% end %>
         </div>
       </div>
         <% @posts.each do |post| %>

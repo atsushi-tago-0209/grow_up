@@ -1,12 +1,12 @@
 .new{
   height: 100vh;
   width: 90%;
-  opacity: 0.6;
+  // opacity: 0.6;
   margin: 0 auto;
   display: flex;
 
   .left-box{
-    width: 70%;
+    width: 65%;
     height: 100vh;
     background-color: #dcdcdc;
     margin-right: 15px;
@@ -82,7 +82,7 @@
     }
   }
   .right-box{
-    width: 32%;
+    width: 41%;
     background-color: #dcdcdc;
     height: 100vh;
     .details{
@@ -104,10 +104,10 @@
       .place{
         color: black;
         margin: 30px 0 20px 16px;
-        width: 280px;
+        width: 100%;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        input[type="text-place"]{
-          width: 80%;
+        .placefield{
+          width: 117%;
         }
       }
       .target{

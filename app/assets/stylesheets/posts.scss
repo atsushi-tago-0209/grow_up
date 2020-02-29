@@ -5,7 +5,6 @@
   // box-sizing: border-box; 
   display: flex;
   flex-flow: column;
-  min-height: 100vh;
   .study-header{
     height:150px;
     background-color: white;
@@ -84,25 +83,20 @@
     } 
   }
   .study{
-    // min-height: 100%;
     width: 100vw;
     flex: 1;
     .study-main{
-      height: calc(100vh - 100px);
-      // overflow: scroll;
       display: block;
       box-sizing: border-box;
       .study-image{
-        height: 350px;
+        height: 300px;
         background-size: cover;
         background-image: url(marvin-meyer-SYTO3xs06fU-unsplash.jpg);
       }
       .study-main-new{
         width: 100%;
-        height: 500px;
         display: flex;
         .study-main-left{
-          height: 100vh;
           width: 70%;
           .label-search{
             display:flex;
@@ -115,7 +109,7 @@
               border-left: solid 10px #668ad8;
               font-size: 18px;
               font-family: 'Kaiti TC',sans-serif;
-              opacity: 0.8;
+              // opacity: 0.8;
             }
             .container{
               margin: 24px 0 0 40px; 
@@ -217,7 +211,6 @@
         }
         .main-right{
         width: 30%;
-        height: 100vh;
         .calendar{
           margin: 10px;
           width: 98%;
@@ -235,7 +228,7 @@
           display: table;
           margin-top: 40px;
           background-color: white;
-          height: 60%;
+          // height: 60%;
           width: 100%;
         }
           /* 日本地図画像（スマホ対応用） */
@@ -386,11 +379,11 @@
     margin-top: auto;  
     // position: absolute;
     // bottom: 0;
+    bottom: 0;
     .sub-title{
       color: white;
       font-size: 10px;
       line-height: 50px;
-      
     }
   }
 }

@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   def index
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true)
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(8)
   end
 
@@ -21,15 +23,22 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update(post_params)
-    redirect_to post_path(post.id)
+    @post = Post.find(params[:id])
+
+    if @post.update(post_params)
+      redirect_to root_path
+    else
+      redirect_to "edit"
+    end
+
   end
 
   def destroy
     post = Post.find(params[:id])
     post.destroy
   end
+
+
 
   private
   def post_params
