@@ -9,7 +9,7 @@
   <%= @post.belongings %>
   </div>
   <div class="studyTarget">
-    <%= @post.target %>
+    <%# <%= @post.targets %> %>
   </div>
   <div class="studySentence">
   <%= simple_format @post.sentence %>
@@ -18,7 +18,7 @@
     <%= @post.schedule %>
   </div>
   <div class="studyImage">
-    <%= @post.image %>
+    <%= image_tag @post.image.to_s %>
   </div>
   <div class="studyTime">
     <%= @post.time %>

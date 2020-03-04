@@ -1,28 +1,28 @@
 <div class="wrapper">
-  <h2>Sign up</h2>
+  <h2>会員情報入力</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class ="organizer">
-      <%= f.label :organizername %><br />
+      <%= f.label :名前 %><br />
       <%= f.text_field :nickname, autofocus: true %>
     </div>
     <div class="email">
-      <%= f.label :email %><br />
+      <%= f.label :メールアドレス %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
 
     <div class="password">
-      <%= f.label :password %>
+      <%= f.label :パスワード（６文字以上で入力）,class:"pass" %>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> 文字以上で入力)</em>
+      
       <% end %><br />
       <%= f.password_field :password, autocomplete: "new-password" %>
     </div>
 
     <div class="password2">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :パスワード（確認用）,class:"pass" %><br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
 

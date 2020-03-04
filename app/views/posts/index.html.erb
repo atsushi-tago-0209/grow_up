@@ -6,14 +6,13 @@
       <div class="label-search">
         <p class="label"> <  研修一覧  > </p>
         <div class="container">
-          <%# <%= link_to post.user.nickname, user_path(post.user), class: "content__right__bottom--userName--btn" %>
-          <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-          <%= search_form_for @q do |f| %>
-            <%= f.label :title_or_place_or_target, "Keyword" %>
-            <%= f.search_field :title_or_place_or_target_cont %>
-
-            <%= f.submit "キーワード検索", class: 'record-form__submit-button' %>
-          <% end %>
+          <%# <%= link_to post.user.nickname, user_path(post.user), class: "content__right__bottom--userName--btn" %> 
+          <%# <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> %>
+          <%# <%= search_form_for @q do |f| %> %>
+            <%# <%= f.label :title_or_place_or_target, "Keyword" %> %> %>
+            <%# <%= f.search_field :title_or_place_or_target_cont ,class:"search" %> %> %>
+            <%# <%= f.submit "キーワード検索", class: 'record-form__submit-button' %> %>
+          <%# <% end  %> %>
         </div>
       </div>
         <% @posts.each do |post| %>

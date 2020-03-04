@@ -1,17 +1,15 @@
-<%= form_with model: @post,local: true,class:"form" do |form| %>
+<%= form_with(model: @post,local: true,class:"form") do |form| %>
 <div class="new">
   <div class ="left-box">
-   
       <div class="title-box">
         <div class ="title">
           <p name="eventname">イベント名</p>
            <%= form.text_field :title %>
         </div>
-
         <div class ="eventintroduce-info">
           <p class="event" name="eventintroduce">イベントの内容</p>
           <div class="introduce">
-            <%= form.text_area :sentence,size: "180x10",placeholder: :どんな内容の研修か入力してください %>
+            <%= form.text_area :sentence,size: "125x8",placeholder: :どんな内容の研修か入力してください %>
           </div>   
         </div>
        </div>
@@ -19,22 +17,13 @@
       </div>
 
       <div class ="image-box">
-      
-        <%= form.label :image, for: "file-input", class: "fa fa-picture-o" do %>
-          <%= form.file_field :image, id: "file-input", style: "display: none;" %>
-        <% end %>
-         <p>イメージ写真を追加</p>
-          <%# <%= f.label :"images_attributes_#{@post.images.length}_image", class: "label-box", id: "label-box--#{@post.images.length}" do %> 
-          <%# <pre class="label-box__text-visible"> クリックしてファイルをアップロード<pre> %> %>
-          <%# <%end%> %>
-            <%# <%= f.fields_for :images do |f| %>
-
-          <%# <%= f.file_field :image_url, class: "hidden-field" %> %>
-          <%# <%= f.check_box:_destroy, class: "hidden-checkbox" %> %> %>
-
-          <%# - @item.images.length.upto(4) do |f|
-          %input{name: "item[images_attributes][#{i}][image_url]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
-          <%end%> %>
+        <%= form.fields_for :images do |image| %>
+          <div data-index="<%= image.index %>" class="js-file_group">
+          
+            <%= form.file_field :image, class: 'js-file' %><br>
+            <span class="js-remove">削除</span>
+          </div>
+        <%end%>
       </div>
     </div>
 
@@ -47,19 +36,17 @@
         <%= form.text_field :place ,class:"placefiled" %>
       </div>    
       <div class="target">
-        <%= form.label :対象者 %>
-        <%# <% ["初任者","５年目まで","１０年目まで","全て"].each do |target| %> %>
-        <%# <%= form.collection_check_boxes :target_ids,Target.all,:id,:name %> %>
-        <%# <%= target %>
-        <%# <% end %> 
+        対象者
+        <%= form.collection_check_boxes :target_ids, Target.all, :id, :target do |b| %>
+          <%= b.label { b.check_box + b.text } %>
+        <% end %>  
       </div>
 
       <div class ="belongings">持ち物<br>
         <%= form.text_area :belongings,size: "35x6" %>
       </div>
-  </div>
+    </div>
     <%= form.submit '公開する', class: :form__btn %> 
-  
   </div>
 </div>
 <% end %>

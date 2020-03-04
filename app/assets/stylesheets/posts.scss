@@ -101,9 +101,11 @@
           .label-search{
             display:flex;
             .label{
+              height: 50px;
+              text-align: center;
               width: 18%;
               padding: 0.5em 1em;
-              margin: 1em 0;
+              margin: 24px 0;
               color: #232323;
               background: rgb(191, 229, 252);
               border-left: solid 10px #668ad8;
@@ -113,7 +115,22 @@
             }
             .container{
               margin: 24px 0 0 40px; 
+              display: flex;
+              .post_search{
+                width: 690px;
+                .search{
+                  width: 400px;
+                  float: left;
+                  margin: 0px auto;
+                  .record-form__submit-button{
+                    width: 150px;
+                  }
+                }
+              }
+              
+              
               .search_container{
+                float: right;
                 box-sizing: border-box;
                 position: relative;
                 border: 1px solid #999;
@@ -164,7 +181,6 @@
               height: 88px;
               width: 18%;
               font-size: 35px;
-              background-image: url(smile_study.jpg);
               font-family: "Avenir","Arial",sans-serif;
             }
             .box{
