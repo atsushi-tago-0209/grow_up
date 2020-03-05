@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def search
+    binding.pry
     @keyword = Post.search(search_params)
     @posts = @keyword.result(distinct: true)
   end

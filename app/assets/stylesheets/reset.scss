@@ -253,9 +253,9 @@ input {
  * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
  * Correct `select` style inheritance in Firefox 4+ and Opera. */
 button,
-select {
-  text-transform: none;
-}
+// select {
+//   text-transform: none;
+// }
 
 /*
  * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
@@ -419,9 +419,9 @@ textarea {
   min-height: 50px;
 }
 
-select {
-  width: 100%;
-}
+// select {
+  // width: 100%;
+// }
 
 i {
   font-style: normal;

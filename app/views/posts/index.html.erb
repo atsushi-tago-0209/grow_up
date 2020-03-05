@@ -6,11 +6,17 @@
       <div class="container">
       <%# <%= link_to post.user.nickname, user_path(post.user), class: "content__right__bottom--userName--btn" %> 
       <%# <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> %>
-        <%= search_form_for(@keyword, url: search_path,method: :get) do |f| %>
+        <%= search_form_for @keyword,enforce_utf8: false, url:search_path do |f| %>
           <%= f.label :title_or_place_or_target, "Keyword" %> 
-          <%= f.search_field :title_or_place_or_belongings_cont ,class:"search",placeholder:"キーワード検索" %> 
-          <%= f.submit "キーワード検索", class: 'record-form__submit-button' %>
+          <%= f.search_field :title_or_place_or_belongings_or_sentence_cont ,class:"search",placeholder:"キーワード検索" %> 
+         
+          <%= f.label :日付で検索 %>
+          <%= f.date_select :schedule,
+                      discard_day: true, discard_month: true,
+                      include_blank: true ,class:"date_year" %>
+          <%= f.submit "検索", class: 'record-form__submit-button' %>
         <% end  %>
+         
       </div>
   <%# <div class="calendar">
     <iframe src="https://calendar.google.com/calendar/embed?src=5ieb4vdb0gjkdcg69biqlrh6lc%40group.calendar.google.com&ctz=Asia%2FTokyo" style="border: 0" width="350" height="450" frameborder="0" scrolling="no" width="50%" height="200px"></iframe>
