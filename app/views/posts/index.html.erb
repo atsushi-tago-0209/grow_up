@@ -8,11 +8,12 @@
         <div class="container">
           <%# <%= link_to post.user.nickname, user_path(post.user), class: "content__right__bottom--userName--btn" %> 
           <%# <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> %>
-          <%# <%= search_form_for @q do |f| %> %>
-            <%# <%= f.label :title_or_place_or_target, "Keyword" %> %> %>
-            <%# <%= f.search_field :title_or_place_or_target_cont ,class:"search" %> %> %>
-            <%# <%= f.submit "キーワード検索", class: 'record-form__submit-button' %> %>
-          <%# <% end  %> %>
+          <%= search_form_for(@keyword, url: search_path,method: :get) do |f| %>
+            <%= f.label :title_or_place_or_target, "Keyword" %> 
+            <%= f.search_field :title_or_place_or_belongings_cont ,class:"search" %> %>
+            <%= f.submit "キーワード検索", class: 'record-form__submit-button' %>
+          <% end  %>
+          
         </div>
       </div>
         <% @posts.each do |post| %>
@@ -21,11 +22,11 @@
         <%= paginate(@posts) %>
     </div>
     <div class="main-right">
-      <div class="calendar">
+      <%# <div class="calendar">
         <iframe src="https://calendar.google.com/calendar/embed?src=5ieb4vdb0gjkdcg69biqlrh6lc%40group.calendar.google.com&ctz=Asia%2FTokyo" style="border: 0" width="350" height="450" frameborder="0" scrolling="no" width="50%" height="200px"></iframe>
-      </div>
-      <div class="japan_map">
-        <p>地域から絞り込み</p>
+      </div> %>
+      <%# <div class="japan_map"> %>
+        <%# <p>地域から絞り込み</p>
         <img src="https://frame-illust.com/fi/wp-content/uploads/2018/03/map-japan-deform-prefecture-01.png" alt="日本地図">
         <span class="area_btn area1" data-area="1">北海道・東北</span>
         <span class="area_btn area2" data-area="2">関東</span>
@@ -101,12 +102,13 @@
             <div data-id="46">鹿児島県</div>
             <div data-id="47">沖縄県</div>
           </div>
-        </div>
-      </div>
+        </div> %>
+      <%# </div> %>
           
       <div class ="snsbox">
         <a href="https://twitter.com/home" class="btn-social-square btn-social-square--twitter">
-          <i class="fa fa-twitter"></i>
+          <i class="fas fa-cloud fa-stack-2x"></i>
+          <i class="fab fa-twitter fa-stack-1x"></i>
         </a>
         <a href="https://ja-jp.facebook.com/" class="btn-social-square btn-social-square--facebook">
           <i class="fa fa-facebook"></i>

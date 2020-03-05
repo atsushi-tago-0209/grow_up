@@ -18,7 +18,7 @@
         </div>
         <div class ="btn">
           <% if user_signed_in? %>
-            <%= link_to current_user.nickname, user_path(current_user), class: "user-btn" %>
+            <%= link_to "マイページ", user_path(current_user), class: "user-btn" %>
             <%= link_to "イベント作成", new_post_path, class: "new_event" %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-new" %>
           <% else %>

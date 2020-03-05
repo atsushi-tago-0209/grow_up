@@ -13,10 +13,12 @@
 ActiveRecord::Schema.define(version: 2020_03_03_024836) do
 
   create_table "post_targets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "post_id"
-    t.integer "target_id"
+    t.bigint "post_id"
+    t.bigint "target_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_post_targets_on_post_id"
+    t.index ["target_id"], name: "index_post_targets_on_target_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -51,4 +53,6 @@ ActiveRecord::Schema.define(version: 2020_03_03_024836) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "post_targets", "posts"
+  add_foreign_key "post_targets", "targets"
 end

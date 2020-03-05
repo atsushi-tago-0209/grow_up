@@ -8,6 +8,11 @@ class PostsController < ApplicationController
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(8)
   end
 
+  def search
+    @keyword = Post.search(search_params)
+    @posts = @keyword.result(distinct: true)
+  end
+
   def new
     @post = Post.new
     @targets = Target.all
@@ -21,6 +26,9 @@ class PostsController < ApplicationController
   end
 
   def show
+    # binding.pry
+    @posts = Post.includes(:user)
+    @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(8)
   end
 
   def edit
@@ -46,6 +54,10 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:title, :place, :image,:belongings, :sentence, :schedule,:time,{:target_ids=>[]}).merge(user_id: current_user.id)
+  end
+
+  def search_params
+    params.require(:q).permit!
   end
 
 end

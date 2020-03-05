@@ -1,6 +1,6 @@
 <%= form_with(model: @post,local: true,class:"form") do |form| %>
-<div class="new">
-  <div class ="left-box">
+  <div class="new">
+    <div class ="left-box">
       <div class="title-box">
         <div class ="title">
           <p name="eventname">イベント名</p>
@@ -17,13 +17,22 @@
       </div>
 
       <div class ="image-box">
-        <%= form.fields_for :images do |image| %>
-          <div data-index="<%= image.index %>" class="js-file_group">
+          <%= form.label 'サムネイル（スクリーンショットなど）' %>
+            <div id="img_field" onClick="$('#file').click()" >
+              <% if @post.image.url.present? %>
+                <%= image_tag(@post.image.url) %>
+              <% else %>
+                <i class="fas fa-image"></i><i class="fas fa-file-upload add"></i>
+              <% end %>
+            </div>
+          <%= form.file_field :image, class: "image", style: "display:none;", id: "file"%>
+        <%# <%= form.fields_for :images do |image| %>
+          <%# <div data-index="<%= image.index %>" class="js-file_group"> %>
           
-            <%= form.file_field :image, class: 'js-file' %><br>
-            <span class="js-remove">削除</span>
-          </div>
-        <%end%>
+            <%# <%= form.file_field :image, class: 'js-file' %><br> 
+            <%# <span class="js-remove">削除</span> %>
+          <%# </div> %>
+        <%# <%end%> 
       </div>
     </div>
 
@@ -36,7 +45,7 @@
         <%= form.text_field :place ,class:"placefiled" %>
       </div>    
       <div class="target">
-        対象者
+        <%# <%=form.label.対象者%> 
         <%= form.collection_check_boxes :target_ids, Target.all, :id, :target do |b| %>
           <%= b.label { b.check_box + b.text } %>
         <% end %>  
@@ -46,7 +55,7 @@
         <%= form.text_area :belongings,size: "35x6" %>
       </div>
     </div>
-    <%= form.submit '公開する', class: :form__btn %> 
+       <%= form.submit '公開する', class: :form__btn %> 
+    </div>
   </div>
-</div>
 <% end %>

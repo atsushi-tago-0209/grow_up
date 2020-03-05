@@ -9,7 +9,9 @@
   <%= @post.belongings %>
   </div>
   <div class="studyTarget">
-    <%# <%= @post.targets %> %>
+    <% @post.post_targets.each do |target| %>
+    <%= target.target.target %>
+    <% end %>
   </div>
   <div class="studySentence">
   <%= simple_format @post.sentence %>
@@ -28,12 +30,13 @@
       <div class="item-num-0#image-box__container">
       </div>
     </div>
+     <%= link_to"申し込む"%>
 
   <% if user_signed_in? && current_user.id == @post.user_id %>
   <div class="studyManage">
   <%= link_to "編集", edit_post_path(@post.id), class: "studyManage__edit" %>
   <%= link_to "削除", post_path(@post.id), method: :delete, class: "studyManage__delete" %>
-  <%= link_to"申し込む"%>
+ 
   <% else %>
  
   <% end %>
