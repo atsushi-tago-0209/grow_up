@@ -33,11 +33,20 @@
             .search{
               width: 250px;
             }
-            select{
-              width: 55%;
+            label[for="q_日付で検索"]{
+              margin-top: 30px;
+              width: 50%;
               height: 30px;
-              margin-left: 50px;
             }
+            .record-form__submit-button{
+              margin-top: 20px;
+            }
+            #q_schedule_1i{
+              width: 56%;
+              margin: 15px 0 0 48px;
+              height: 40px;
+            }
+            
             .date_year{
               width: 55%;
               height: 30px;
@@ -214,7 +223,7 @@
             .label{
               height: 40px;
               text-align: center;
-              width: 28%;
+              width: 50%;
               padding: 0.5em 1em;
               margin: 24px 0;
               color: #232323;
@@ -233,6 +242,8 @@
                   width: 400px;
                   float: left;
                   margin: 0px auto;
+                  height: 40px;
+                  margin-left: 50px;
                   .record-form__submit-button{
                     width: 150px;
                   }
@@ -327,6 +338,11 @@
                   padding-top: 5px;
                   font-family: "Avenir","Arial",sans-serif;
                 }
+                // .target{
+                //   height: 44%;
+                //   margin-top: 60px;
+                //   font-family: Verdana, Geneva, Tahoma, sans-serif;
+                // }
               }
             }
           }

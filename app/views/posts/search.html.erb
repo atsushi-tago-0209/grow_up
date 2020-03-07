@@ -1,6 +1,13 @@
 <div id="s-result">
    <!-- search result -->
    <% @posts.each do |kekka| %>
-     <%= @posts %>
+     <%= kekka.title  %>
+     <%= kekka.place  %>
+     <%= kekka.image %>  
+     <%# <%= image_tag post.image.to_s %>
+     <%= kekka.belongings %>
+     <%= kekka.sentence %>
+     <%= kekka.schedule %>
+     <%= kekka.time %>
    <% end %>
 </div>

@@ -27,7 +27,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    # binding.pry
     @posts = Post.includes(:user)
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(8)
   end
