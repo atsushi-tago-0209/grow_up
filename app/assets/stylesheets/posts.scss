@@ -40,6 +40,12 @@
               width: 50%;
               height: 30px;
             }
+            #q_schedule_gteq{
+              width: 55%;
+            }
+            #q_schedule_lteq{
+              width: 55%;
+            }
             .record-form__submit-button{
               margin-top: 20px;
             }
@@ -340,11 +346,14 @@
                   padding-top: 5px;
                   font-family: "Avenir","Arial",sans-serif;
                 }
-                // .target{
-                //   height: 44%;
-                //   margin-top: 60px;
-                //   font-family: Verdana, Geneva, Tahoma, sans-serif;
-                // }
+                .target{
+                  height: 44%;
+                  margin-top: 60px;
+                  font-family: Verdana, Geneva, Tahoma, sans-serif;
+                }
+                #post_target_ids_1{
+                  margin: 0px;
+                }
               }
             }
           }

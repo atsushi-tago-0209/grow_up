@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    binding.pry
+    # binding.pry
     @keyword = Post.search(search_params)
     @posts = @keyword.result(distinct: true)
   end
@@ -23,7 +23,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
+    binding.pry
+    if Post.create(post_params)
+    else
+      render "new"
+    end
   end
 
   def show
@@ -53,7 +57,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :place, :image,:belongings, :sentence, :schedule,:time,{:target_ids=>[]}).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :place, :image,:belongings, :sentence, :schedule,:time, :endtime,:capacity,{:target_ids=>[]}).merge(user_id: current_user.id)
   end
 
   def search_params
