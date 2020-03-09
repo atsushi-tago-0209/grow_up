@@ -34,13 +34,13 @@ label{
   font-size: 13px;
   font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
 }
-input{
-  float: left;
-  width:250px;
-  height: 45px;
-  border-radius:5px;
-  margin: 10px auto;
-}
+// input{
+//   float: left;
+//   width:250px;
+//   height: 45px;
+//   border-radius:5px;
+//   margin: 10px auto;
+// }
 
 input[type="checkbox"]{
   width:10px;
@@ -59,6 +59,7 @@ input[type="submit"]{
   padding: 10px 20px;
   margin: 0 5px;
   border-radius: 10;
+  width: 88%;
 }
 input[type="reset"]{
   background: #aaa;

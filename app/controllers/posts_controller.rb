@@ -1,29 +1,45 @@
 class PostsController < ApplicationController
+  before_action :set_post ,only: [:show, :edit, :update]
+
   def index
-    @posts = Post.includes(:user)
+    @posts = Post.all
+    @keyword = Post.ransack(params[:q])
+    @posts = @keyword.result(distinct: true)
+    @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(8)
+  end
+
+  def search
+    binding.pry
+    @keyword = Post.search(search_params)
+    @posts = @keyword.result(distinct: true)
   end
 
   def new
     @post = Post.new
+    @targets = Target.all
+    # @targets= @post.targets.new
+    # @post.build_target
+    # @post.users << current_user
   end
 
   def create
     Post.create(post_params)
-    redirect_to root_path
   end
 
   def show
-    @post = Post.find(params[:id])
+    @posts = Post.includes(:user)
+    @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(8)
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update(post_params)
-    redirect_to post_path(post.id)
+    if @post.update(post_params)
+      redirect_to root_path
+    else
+      redirect_to "edit"
+    end
   end
 
   def destroy
@@ -31,9 +47,17 @@ class PostsController < ApplicationController
     post.destroy
   end
 
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
   private
   def post_params
-    params.require(:post).permit(:title,:place,:belongins,:target,:sentence,:schedule,:image,:time).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :place, :image,:belongings, :sentence, :schedule,:time,{:target_ids=>[]}).merge(user_id: current_user.id)
   end
-  
+
+  def search_params
+    params.require(:q).permit!
+  end
+
 end

@@ -1,54 +1,57 @@
-<%= form_with model: @post,local: true,class:"form" do |form| %>
-<div class="new">
-  <div class ="left-box">
-   
-      <div class="title-box">
-        <div class ="title">
-          <p name="eventname">イベント名</p>
-           <%= form.text_field :title %>
+<%= form_with(model: @post,local: true,class:"form") do |form| %>
+  <div class="all">
+    <div class="event">
+      <div class ="event-name">
+        <div class="title-box">
+          <div class ="title">
+            <p name="eventname" class="e">イベント名</p>
+            <%= form.text_field :title,class:"eventform",placeholder: :イベント名を入力してください %>
+          </div>
+          <div class ="eventintroduce-info">
+            <p class="event-show" name="eventintroduce">イベントの内容</p>
+            <div class="introduce">
+              <%= form.text_area :sentence,size: "125x8",placeholder: :どんな内容の研修か入力してください %>
+            </div>   
+          </div>
         </div>
 
-        <div class ="eventintroduce-info">
-          <p class="event" name="eventintroduce">イベントの内容</p>
-          <div class="introduce">
-            <%= form.text_area :sentence,size: "180x10",placeholder: :どんな内容の研修か入力してください %>
-          </div>   
+        <div class ="image-box">
+            <%= form.label 'サムネイル（スクリーンショットなど）',class:"samnaile" %>
+              <div id="img_field" onClick="$('#file').click()" >
+                <% if @post.image.url.present? %>
+                  <%= image_tag(@post.image.url) %>
+                <% else %>
+                  <i class="fas fa-image"></i><i class="fas fa-file-upload add"></i>
+                <% end %>
+              </div>
+            <%= form.file_field :image, class: "image", style: "display:none;", id: "file"%>
         </div>
-       </div>
-      <div class="yohaku">
-      </div>
-
-      <div class ="image-box">
-      
-        <%= form.label :image, for: "file-input", class: "fa fa-picture-o" do %>
-          <%= form.file_field :image, id: "file-input", style: "display: none;" %>
-        <%end%>
-         <p>イメージ写真を追加</p>
-      </div>
-    </div>
-
-  <div class="right-box">
-    <div class="details">
-      <div class ="date">イベント日時<br>
-        <%= form.date_select :schedule, placeholder:"日付を設定" ,size: "20x10",class:"dateselect" %>
-      </div>
-      <div class ="place">場所<br>
-        <%= form.text_field :place %>
-      </div>    
-      <div class="target">
-        <%= form.label :対象者 %>
-        <% ["初任者","５年目まで","１０年目まで","全て"].each do |target| %>
-        <%= form.check_box :target, {multiple: true},target, nil %>
-        <%= target %>
-        <% end %>
-      </div>
-
-      <div class ="belongings">持ち物<br>
-        <%= form.text_area :belongings,size: "28x6" %>
+        <div class="right-box">
+          <div class="details">
+            <div class ="date">イベント日時<br>
+              <%= form.date_field :schedule, size: "30x20",class:"dateselect" %>
+            </div>
+            <div class="holdingtime">開催時刻<br>
+              <%= form.time_select :time ,class:"timeselect"%>
+            </div>
+            <div class ="place">場所<br>
+              <%= form.text_field :place ,class:"placefiled",placeholder: :住所を入力してください %>
+            </div>    
+            <div class="target">
+            対象者
+              <%# <%=form.label.対象者%> 
+              <%= form.collection_check_boxes :target_ids, Target.all, :id, :target do |b| %>
+                <%= b.label { b.check_box + b.text } %>
+              <% end %>  
+            </div>
+            <div class ="belongings">持ち物<br>
+              <%= form.text_area :belongings,size: "35x6",placeholder: :参加者が持ってくるものを入力してください %>
+            </div>
+           
+          </div>
+           </div>
+              <%= form.submit '公開する', class: "form__btn" %> 
+            </div>
       </div>
   </div>
-    <%= form.submit '公開する', class: :form__btn %> 
-  
-  </div>
-</div>
 <% end %>

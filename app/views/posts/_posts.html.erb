@@ -1,21 +1,21 @@
- <div class = "studies">
-   <div class= "icon">
-    <%= post.schedule %>
-   </div>
-   <div class="box">
-     <div class= "introduce-organizername">
-       <div class ="introduce">
-        <%= link_to post.title, post_path(post.id), class: "studies_title" %>          
-       </div>
-
-       <div class="organizername">
-        主催者 <%= post.user.nickname %>
-       </div>
+<div class = "studies">
+  <div class= "inner">
+  
+    <div class="box">
+      <%= image_tag post.image.to_s %>
     </div>
-     
-    <p class="sentence">
-      <%= post.sentence%>
-    </p>        
-  <div class ="place"><%= post.place%><%= post.time %></div>
+    <div class="detail">
+      <div class= "project-detail">
+        <div class="iine!">いいね</div>
+      </div>
+      <h1 class="project-title">
+        <%= link_to post.title, post_path(post.id), class: "studies_title" %> 
+      </h1>
+      <p class="project-excerpt">
+         <%= post.sentence %>
+      </p>
+        <div class="organizername">
+        </div>
+      <div class ="place"> 日付<%= post.schedule %>  開催時刻<%= post.time %> 場所<%= post.place%> </div>
   </div>
 </div>
