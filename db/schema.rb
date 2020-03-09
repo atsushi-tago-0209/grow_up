@@ -22,13 +22,15 @@ ActiveRecord::Schema.define(version: 2020_03_03_024836) do
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title"
-    t.string "place"
+    t.string "title", null: false
+    t.string "place", null: false
     t.text "image"
-    t.text "belongings"
-    t.text "sentence"
-    t.date "schedule"
-    t.time "time"
+    t.text "belongings", null: false
+    t.text "sentence", null: false
+    t.date "schedule", null: false
+    t.time "time", null: false
+    t.time "endtime", null: false
+    t.text "capacity", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"

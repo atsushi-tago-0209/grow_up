@@ -1,13 +1,15 @@
 class CreatePosts < ActiveRecord::Migration[5.2]
   def change
     create_table :posts do |t|
-      t.string :title
-      t.string :place
+      t.string :title,   null:false
+      t.string :place,   null:false
       t.text :image
-      t.text :belongings
-      t.text :sentence
-      t.date :schedule
-      t.time :time
+      t.text :belongings,null:false
+      t.text :sentence,  null:false
+      t.date :schedule,  null:false
+      t.time :time,      null:false
+      t.time :endtime,   null:false
+      t.text :capacity,  null:false
       t.timestamps
     end
   end
