@@ -5,7 +5,7 @@
         <div class="title-box">
           <div class ="title">
             <p name="eventname" class="e">イベント名</p>
-            <%= form.text_field :title,class:"eventform" %>
+            <%= form.text_field :title,class:"eventform",placeholder: :イベント名を入力してください %>
           </div>
           <div class ="eventintroduce-info">
             <p class="event-show" name="eventintroduce">イベントの内容</p>
@@ -30,13 +30,12 @@
           <div class="details">
             <div class ="date">イベント日時<br>
               <%= form.date_field :schedule, size: "30x20",class:"dateselect" %>
-             
             </div>
-            <div class="time">開催時刻
+            <div class="holdingtime">開催時刻<br>
               <%= form.time_select :time ,class:"timeselect"%>
             </div>
             <div class ="place">場所<br>
-              <%= form.text_field :place ,class:"placefiled" %>
+              <%= form.text_field :place ,class:"placefiled",placeholder: :住所を入力してください %>
             </div>    
             <div class="target">
             対象者
@@ -46,7 +45,7 @@
               <% end %>  
             </div>
             <div class ="belongings">持ち物<br>
-              <%= form.text_area :belongings,size: "35x6" %>
+              <%= form.text_area :belongings,size: "35x6",placeholder: :参加者が持ってくるものを入力してください %>
             </div>
            
           </div>

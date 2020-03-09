@@ -8,9 +8,11 @@
   .study{
     width: 100vw;
     flex: 1;
+    background-color: whitesmoke;
     .study-main{
       display: block;
       box-sizing: border-box;
+      background-color: white;
       .study-image{
         height: 300px;
         background-size: cover;
