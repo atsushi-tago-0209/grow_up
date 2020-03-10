@@ -15,5 +15,9 @@ module GrowUp
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.time_zone = 'Tokyo'
+    require 'date'
+    date = Date.today    
+    weeks = ["月","火","水","木","金","土","日"]
   end
 end

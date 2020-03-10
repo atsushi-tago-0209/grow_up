@@ -2,7 +2,7 @@
   <div class= "inner">
   
     <div class="box">
-      <%= image_tag post.image.to_s %>
+      <%= image_tag post.image.to_s ,:size =>'556x225'%>
     </div>
     <div class="detail">
       <div class= "project-detail">
@@ -16,6 +16,6 @@
       </p>
         <div class="organizername">
         </div>
-      <div class ="place"> 日付<%= post.schedule %>  開催時刻<%= post.time %> 場所<%= post.place%> </div>
+      <div class ="place"> 日付:<%= post.schedule.strftime("%Y年%-m月%-d日(%a)") %>  開催時刻:<%= post.time.strftime('%H:%M') %> 場所:<%= post.place%> </div>
   </div>
 </div>
