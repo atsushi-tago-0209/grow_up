@@ -23,8 +23,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
+    # binding.pry
     if Post.create(post_params)
+      redirect_to ""
     else
       render "new"
     end
@@ -33,6 +34,8 @@ class PostsController < ApplicationController
   def show
     @posts = Post.includes(:user)
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(8)
+    weeks = ["月","火","水","木","金","土","日"]
+
   end
 
   def edit

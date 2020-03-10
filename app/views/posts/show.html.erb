@@ -1,47 +1,61 @@
-<div class= "main">
-  <div class="main-inner">
-    <div class="studyTitle">
-      <%= @post.title %>
-    </div>
-    <div class="studytPlace">
-      <%= @post.place %>
-    </div>
-    <div class="studyBelongins">
-    <%= @post.belongings %>
-    </div>
-    <div class="studyTarget">
-      <% @post.post_targets.each do |target| %>
-      <%= target.target.target %>
-      <% end %>
-    </div>
-    <div class="studySentence">
-    <%= simple_format @post.sentence %>
-    </div>
-    <div class="studySchedule">
-      <%= @post.schedule %>
-    </div>
-    <div class="studyImage">
-      <%= image_tag @post.image.to_s %>
-    </div>
-    <div class="studyTime">
-      <%= @post.time %>
-    </div>
-    <div class="studyCapacity">
-    定員<%= @post.capacity%>人
-    </div>
-      <div class ="image-box-1">
-        <div class="item-num-0#image-box__container">
-        </div>
+<div class= "event">
+  <div class="event-inner">
+    <div class="event-inner-header">
+      <div class="show-header-tags">
+        <hgroup>
+          <h1 class="studyTitle">
+            <%= @post.title %>
+          </h1>
+          <h2 class="studyCompany">
+          </h2>
+        </hgroup>
       </div>
-      <%= link_to"申し込む"%>
-
-    <% if user_signed_in? && current_user.id == @post.user_id %>
-    <div class="studyManage">
-    <%= link_to "編集", edit_post_path(@post.id), class: "studyManage__edit" %>
-    <%= link_to "削除", post_path(@post.id), method: :delete, class: "studyManage__delete" %>
-    <% else %>
-  
-    <% end %>
+      <div class="event-show-cover-wrapper">
+        <div class="event-image">
+          <%= image_tag @post.image.to_s,:size =>'978x398' %>
+      </div>
+    </div>
+    <div class="event-main">
+      <table >
+        <tr>
+          <td>日付</td><td><%= @post.schedule.strftime("%Y年%-m月%-d日(%a)") %></td>     
+        </tr>
+        <tr>
+        <td>研修時間</td><td><%= @post.time.strftime('%H:%M') %> 〜 <%= @post.endtime.strftime('%H:%M') %></td>
+        <tr>
+          <td>会場</td><td> <%= @post.place %></td>     
+        </tr>
+        <tr>
+        <td>持ち物</td><td><%= @post.belongings %></td>
+        </tr>
+        <tr>
+        <td>対象者</td>
+        <td> 
+        <% @post.post_targets.each do |target| %>
+        <%= target.target.target %>
+        <% end %>
+        </td>
+        </tr>
+        <tr>
+        <td>定員</td><td><%= @post.capacity%>人</td>
+        </tr>
+        <tr>
+        <td>研修内容</td><td><%= simple_format @post.sentence %></td>
+        </tr>
+        </table>
+      
+        <div class="event-right-box">
+            <% if user_signed_in? && current_user.id == @post.user_id %>
+            <div class="studyManage">
+            <%= link_to "編集", edit_post_path(@post.id), class: "studyManage__edit" %>
+            <%= link_to "削除", post_path(@post.id), method: :delete, class: "studyManage__delete" %>
+            <% else %>
+            <% end %>
+          </div>
     </div>
   </div>
+  <div class="apply-box">
+      <%= link_to"申し込む",new_entry_path(@post.id), class: "apply" %>
+    </div>
 </div>
+          

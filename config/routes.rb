@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :posts, except: :index 
   resources :users ,only: [:new,:create,:edit,:destroy,:update,:show]
   resources :targets, only: [:new, :create]
+  resources :entries, only:[:new,:create]
 end

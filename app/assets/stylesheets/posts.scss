@@ -1,14 +1,11 @@
 .wrapper{
   min-height: 100vh;
-  // position: relative;
-  // padding-bottom: 50px;
-  // box-sizing: border-box; 
   display: flex;
   flex-flow: column;
   .study{
     width: 100vw;
     flex: 1;
-    background-color: whitesmoke;
+    background-color: white;
     .study-main{
       display: block;
       box-sizing: border-box;
@@ -185,7 +182,6 @@
             }
   
             @media screen and (max-width: 480px){
-                /* スマホユーザー向けにボタン文字サイズを調整 */
                 .japan_map .area_btn{
                     font-size: 4vw;
                 }
@@ -214,13 +210,13 @@
             transform: translateY(-5px);
           }
           .btn-social-square--twitter {
-            background: #22b8ff;
+            background-color: #00A4BB;;
             margin-left: 240px;
             margin-top: 20px;
             font-family: "Font Awesome 5 Free"
           }
           .btn-social-square--facebook {
-            background: #6680d8;
+            background-color: #00A4BB;;
           }
           }
         .study-main-right{
@@ -236,10 +232,9 @@
               margin: 24px 0;
               color: #232323;
               background: rgb(191, 229, 252);
-              border-left: solid 10px #668ad8;
+              border-left: solid 10px #00A4BB;;
               font-size: 18px;
               font-family: 'Kaiti TC',sans-serif;
-              // opacity: 0.8;
             }
             .container{
               margin: 24px 0 0 40px; 
@@ -285,7 +280,7 @@
                 font-size: 1.3em;
                 border: none;
                 background: none;
-                color: #3879D9;
+                color: #00A4BB;;
                 position: absolute;
                 width: 2.5em;
                 height: 2.5em;
@@ -324,7 +319,7 @@
                   color: black;
                 }
                 .project-title a:hover {
-                  color: #4169e1;
+                  color: #00A4BB;;
                 }
                 .project-excerpt{
                   line-height: 1.5;
