@@ -13,14 +13,17 @@
                       include_blank: true ,class:"date_year" %> 
           <%= f.date_field :schedule_gteq, include_blank: true %> 
           <%= f.date_field :schedule_lteq, include_blank: true %>
-          <%= f.submit "検索", class: 'record-form__submit-button' %>
+          <div class="searchregion">
+            <%= f.label :地域で絞り込み %>
+            <%= f.select :category_id_eq, @category_parent_array,{},{class:'listing-select-wrapper__box--select',id:'parent_category'} %>
+          </div>
+          <%= f.submit "検索", class: 'record-form__submit-button' %> 
         <% end %>
       </div>
     </div>
     <div class="study-main-right">
       <div class="label-search">
         <p class="label"> <  研修一覧  > </p>
-        
       </div>
         <% @posts.each do |post| %>
         <%= render partial: "posts", locals: { post: post } %>

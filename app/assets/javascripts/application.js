@@ -12,14 +12,12 @@
 //= require jquery
 //= require rails-ujs
 //= require activestorage
-//=require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
 
 $(function(){
   $fileField = $('#file')
- 
   // 選択された画像を取得し表示
   $($fileField).on('change', $fileField, function(e) {
     file = e.target.files[0]
