@@ -83,15 +83,14 @@
             display:flex;
             .label{
               height: 40px;
-              text-align: center;
               width: 50%;
               padding: 0.5em 1em;
               margin: 24px 0;
               color: #232323;
-              background: rgb(191, 229, 252);
-              border-left: solid 10px #00A4BB;;
-              font-size: 18px;
-              font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+              border-left: solid 5px #00A4BB;;
+              font-size: 22px;
+              line-height: 22px;
+              font-family: 'ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
             }
             .container{
               margin: 24px 0 0 40px; 
@@ -159,9 +158,11 @@
               cursor: pointer;
               width: 100%;
               padding-bottom: 30px;
-             
               // position: relative;
               border-bottom: 1px solid #e3e3e3;
+              .studies_title{
+                cursor: pointer;
+              }
               .box{
                 height: 225px;
                 margin-bottom: 20px;
@@ -179,6 +180,10 @@
                   margin-bottom: 8px;
                   margin-top: 10px;
                   color: black;
+                  .studies_title{
+                    color: black;
+                    cursor: pointer;
+                  }
                 }
                 .project-title a:hover {
                   color: #00A4BB;;
@@ -190,6 +195,7 @@
                   font-size: 14px;
                   font-weight: 400;
                   word-wrap: break-word;
+                  overflow: auto;
                 }
                 .organizername{
                   font-size: 13px;

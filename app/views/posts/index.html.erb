@@ -8,9 +8,6 @@
           <%= f.label :title_or_place_or_target, "Keyword" %> 
           <%= f.search_field :title_or_place_or_belongings_or_sentence_or_schedule_cont ,class:"search",placeholder:"キーワード検索" %> 
           <%= f.label :日付で検索 %>
-          <%# <%= f.date_select :schedule,
-                      discard_day: true, discard_month: true,
-                      include_blank: true ,class:"date_year" %> 
           <%= f.date_field :schedule_gteq, include_blank: true %> 
           <%= f.date_field :schedule_lteq, include_blank: true %>
           <div class="searchregion">

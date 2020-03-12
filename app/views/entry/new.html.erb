@@ -1,3 +1,9 @@
-<div class="studyTitle">
-  <%= @post.title %>
+<div class="entryTitle">
+  <div class="entryTitle-new">
+  研修名<br>「<%= @post.title %>」に申し込みます。
+  </div>
+  <p class="confirmation">イベント運営者に、ご登録いただいたメールアドレスと名前、所属をお伝えします。</p>
+  <div class="entry">
+  <%=link_to "申し込みを完了する", post_entry_index_path(@post.id), class:"entrycreate" %>
+  </div>
 </div >

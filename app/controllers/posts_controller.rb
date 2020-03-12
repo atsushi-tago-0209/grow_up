@@ -10,7 +10,6 @@ class PostsController < ApplicationController
     @category_parent_array= Category.where(ancestry: nil).pluck(:name,:id)
     @category_parent_array.prepend(["すべて",""])
     @parents = Category.all.order("id ASC").limit(8)
-    # binding.pry
   end
 
   def search
@@ -53,7 +52,7 @@ class PostsController < ApplicationController
   end
 
   def get_category_children
-    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+    @category_children = Category.find_by(id: "#{params[:parent_id]}", ancestry: nil).children
   end
 
   def set_post

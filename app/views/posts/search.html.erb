@@ -1,13 +1,30 @@
 <div id="s-result">
-   <!-- search result -->
   <% @posts.each do |kekka| %>
-    <%= kekka.title  %>
-    <%= kekka.place  %>
-    <%= kekka.image %>  
-    <%# <%= image_tag post.image.to_s %>
-    <%= kekka.belongings %>
-    <%= kekka.sentence %>
-    <%= kekka.schedule %>
-    <%= kekka.time %>
+  <div class = "studies">
+  <div class= "inner">
+    <%=link_to(('/posts/:id'),class:"innerlink") do%>
+    <div class="box">
+      <%= image_tag kekka.image.to_s ,:size =>'550x250'%> 
+    </div>
+    <div class="detail">
+      <div class= "project-detail">
+        
+      </div>
+      <h1 class="project-title">
+        <%= kekka.title  %>
+      </h1>
+      <div class ="place"> 
+        日付:<%= kekka.schedule.strftime("%Y年%-m月%-d日(%a)") %><br>
+        開催時刻: <%= kekka.time.strftime('%H:%M') %> <br>
+        場所: <%= kekka.place %> 
+      </div>
+      <p class="project-excerpt">
+        <%= kekka.sentence %>
+      </p>
+        <div class="organizername">
+        </div>
+  </div>
+</div>
+    <%end%>
   <% end %>
 </div>

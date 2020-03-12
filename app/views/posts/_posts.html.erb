@@ -1,6 +1,6 @@
 <div class = "studies">
   <div class= "inner">
-  
+    <%= link_to(post_path(post.id), class: "studies_title") do %> 
     <div class="box">
       <%= image_tag post.image.to_s ,:size =>'556x225'%>
     </div>
@@ -17,5 +17,6 @@
         <div class="organizername">
         </div>
       <div class ="place"> 日付:<%= post.schedule.strftime("%Y年%-m月%-d日(%a)") %>  開催時刻:<%= post.time.strftime('%H:%M') %> 場所:<%= post.place%> </div>
+    <%end%>
   </div>
 </div>
