@@ -10,6 +10,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.time :time,      null:false
       t.time :endtime,   null:false
       t.text :capacity,  null:false
+      # t.references :category, foreign_key: true
       t.timestamps
     end
   end

@@ -1,3 +1,42 @@
-// Place all the styles related to the entry controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.entryTitle{
+  width: 80%;
+  margin: 50px auto;
+  .confirmation{
+    margin: 10px auto;
+    font-size: 22px;
+    text-align: center;
+  }
+  .entryTitle-new{
+    font-size: 28px;
+    font-family: inherit;
+    text-align: center;
+  }
+  .confirmation{
+    font-size: 16px;
+  }
+  .entrycreate{
+    display: -webkit-flex;
+    display: flex;
+    width: 60%;
+    height: 45px;
+    margin: 20px auto;
+    -webkit-justify-content: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50px;
+    background: unset;
+    background-image: linear-gradient(260deg, #00c4c4, #0d93e0);
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.02);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 2.7;
+    color: #fff !important;
+    border: none;
+    outline: none;
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+  .entrycreate :hover {
+    background-position: right center;
+  }
+}

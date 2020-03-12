@@ -12,7 +12,7 @@
       </div>
       <div class="event-show-cover-wrapper">
         <div class="event-image">
-          <%= image_tag @post.image.to_s,:size =>'978x398' %>
+          <%= image_tag @post.image.to_s %>
       </div>
     </div>
     <div class="event-main">
@@ -55,7 +55,7 @@
     </div>
   </div>
   <div class="apply-box">
-      <%= link_to"申し込む",new_entry_path(@post.id), class: "apply" %>
+      <%= link_to"申し込む",new_post_entry_path(@post.id), class: "apply" %>
     </div>
 </div>
           
