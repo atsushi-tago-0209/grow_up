@@ -61,7 +61,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :place, :image,:belongings, :sentence, :schedule,:time, :endtime,:capacity,{:target_ids=>[]}).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :place, :image,:belongings, :sentence, :schedule,:time, :endtime,:capacity,:fee,{:target_ids=>[]}).merge(user_id: current_user.id)
   end
 
   def search_params

@@ -45,6 +45,9 @@
             <div class="capa">定員<br>
               <%= form.text_field :capacity ,class:"capacityfield",placeholder: :半角で入力%>  
             </div> 
+            <div class="fee">参加費<br>
+              <%= form.text_field :fee ,class:"feefield",placeholder: :半角で入力 %>  
+            </div>
             <div class="target">
               <%=form.label :対象者%> 
                 <%= form.collection_check_boxes :target_ids, Target.all, :id, :target do |b| %>

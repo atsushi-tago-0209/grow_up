@@ -43,3 +43,37 @@ sikoku.children.create([{name: "徳島"},{name: "香川"},{name: "愛媛"},{name
 
 kyuusyuu = Category.create(name: "九州")
 kyuusyuu.children.create([{name: "福岡"},{name: "佐賀"},{name: "長崎"},{name: "大分"},{name: "熊本"},{name: "鹿児島"},{name: "沖縄"}])
+
+Post.create(
+  title: "【教師のための楽しく学んでハッピーになれるセミナー】"
+  place: "京都市中京区研修町１"
+  image: File.open('./app/assets/images/test.jpg')
+  belongings: "新学習指導要領"
+  sentence: "★午前：「荒れた学級にしない学級経営の技」（10:00～12:30）
+  第一講座
+  百人一首の教育的効果は絶大！あの子が負けを受け入れられる！？高学年の男女の仲が自然と良くなる！？保護者からも大好評！？
+  第二講座
+  褒めて伸ばせば、子どもも保護者も大満足！？子どもの褒め方（褒め方１０パターン・一筆箋など）  
+  第三講座
+  正しい子どもの叱り方をすれば、子どもの信頼を得る（予告評定など）
+  第四講座
+  当番システムが安定すれば、学級も安定！？そうじ当番、一人一役システム
+  第五講座
+  弱肉強食の世界は、学級崩壊へと続く？これぞ平等。給食おかわりシステムとその応用"
+  schdule: "2020-03-21"
+  time:"11:10:00"
+  endtime:"11:50:00"
+  capacity:"20"
+  fee:"1500"
+  user_id:"1"
+  category_id:"29"
+)
+
+User.create(
+  first_name:"山田"
+  last_name:"太郎"
+  first_name_kana:"ヤマダ"
+  last_name_kana:"タロウ"
+  email:"y@gmail.com"
+  encrypted_password:"$2a$11$4k.OCk0NFRrLsW5ivrTAfujGwM1gZWP.aKeLlFtWu2V.ivyB0FnWW"
+)

@@ -164,7 +164,8 @@
                 cursor: pointer;
               }
               .box{
-                height: 225px;
+                max-width: 100%;
+                height: auto;
                 margin-bottom: 20px;
               }
               .detail{

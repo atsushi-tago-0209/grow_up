@@ -41,7 +41,6 @@
           font-size: inherit;
           height: 48px;
           margin: 0;
-          outline: none;
           padding: 0 16px;
           width: inherit;
         }
@@ -67,7 +66,6 @@
             color: #222;
             font-size: 16px;
             margin: 0;
-            outline: none;
             padding: 13px 16px;
             resize: vertical;
             vertical-align: middle;
@@ -161,7 +159,6 @@
           font-size: 16px;
           height: 48px;
           line-height: 1;
-          outline: none;
           padding: 0 56px 0 16px;
         }
       }
@@ -209,13 +206,13 @@
           padding: 20px 0;
         }
       }
-      .capa{
+      .capa,.fee{
         color: black;
         height: 120px;
         margin-top: 20px;
         width: 100%;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        #post_capacity{
+        #post_capacity,#post_fee{
           margin-left: 0;
           width: 100%;
           padding: 20px 0;
@@ -262,7 +259,6 @@
           color: #222;
           font-size: 16px;
           margin: 0;
-          outline: none;
           padding: 13px 16px;
           resize: vertical;
           vertical-align: middle;

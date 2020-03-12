@@ -45,7 +45,8 @@ ActiveRecord::Schema.define(version: 2020_03_11_104617) do
     t.date "schedule", null: false
     t.time "time", null: false
     t.time "endtime", null: false
-    t.text "capacity", null: false
+    t.integer "capacity", null: false
+    t.integer "fee", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
@@ -60,6 +61,10 @@ ActiveRecord::Schema.define(version: 2020_03_11_104617) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -67,7 +72,6 @@ ActiveRecord::Schema.define(version: 2020_03_11_104617) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
