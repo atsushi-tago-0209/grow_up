@@ -78,15 +78,69 @@
       overflow: auto;
       position: fixed;
       top: 0;
-      left: 0;
+      right: 0;
       z-index: 9999;/*最前面に*/
-      width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+      width: 90%;/*左側に隙間を作る（閉じるカバーを表示）*/
       max-width: 330px;/*最大幅（調整してください）*/
       height: 100%;
       background: #fff;/*背景色*/
       transition: .3s ease-in-out;/*滑らかに表示*/
-      -webkit-transform: translateX(-105%);
-      transform: translateX(-105%);/*左に隠しておく*/
+      -webkit-transform: translateX(105%);
+      transform: translateX(105%);/*右に隠しておく*/
+      a.new_event{
+        margin: 10px 10px;
+        font-family: 'Reem Kufi', sans-serif;
+        font-size: 17px;
+        text-align: center;
+        line-height: 30px;
+        width: 150px;
+        height: 30px;
+        text-decoration: none;
+        color: black;
+        border-bottom: solid 4px #627295;
+        border-radius: 3px;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+      }
+      .new_event:hover {
+        background-color: #d3d3d3;
+      }      
+      a.btn-new{
+      margin:11px 10px;
+      font-family: 'Reem Kufi', sans-serif;
+      font-size: 17x;
+      border-bottom: solid 4px #627295;
+      border-radius: 3px;
+      text-align: center;
+      line-height: 30px;
+      height: 30px;
+      width: 150px;
+      text-decoration: none;
+      color: black;
+      -webkit-transition: all .3s;
+      transition: all .3s;
+     }
+      a.btn-new:hover {
+        background-color: #d3d3d3;
+      }    
+      a.user-btn{
+        margin:11px 10px;
+        font-family: 'Reem Kufi', sans-serif;
+        font-size: 30x;
+        text-decoration: none;
+        border-bottom: solid 4px #627295;
+        border-radius: 3px;
+        text-align: center;
+        line-height: 30px;
+        height: 30px;
+        width: 150px;
+        color: black;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+      }
+      a.user-btn:hover {
+        background-color: #d3d3d3;
+      }  
     }
     
     /*チェックが入ったらもろもろ表示*/
@@ -100,59 +154,10 @@
       transform: translateX(0%);/*中身を表示（右へスライド）*/
       box-shadow: 6px 0 25px rgba(0,0,0,.15);
     }
-    a.new_event{
-      margin: 10px 10px;
-      font-family: 'Reem Kufi', sans-serif;
-      font-size: 17px;
-      text-align: center;
-      line-height: 30px;
-      width: 150px;
-      height: 30px;
-      text-decoration: none;
-      color: black;
-      border-bottom: solid 4px #627295;
-      border-radius: 3px;
-      -webkit-transition: all .3s;
-      transition: all .3s;
-    }
-    .new_event:hover {
-      background-color: #d3d3d3;
-    }      
-    a.btn-new{
-    margin:11px 10px;
-    font-family: 'Reem Kufi', sans-serif;
-    font-size: 17x;
-    border-bottom: solid 4px #627295;
-    border-radius: 3px;
-    text-align: center;
-    line-height: 30px;
-    height: 30px;
-    width: 150px;
-    text-decoration: none;
-    color: black;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-   }
-    a.btn-new:hover {
-      background-color: #d3d3d3;
-    }    
-    a.user-btn{
-      margin:11px 10px;
-      font-family: 'Reem Kufi', sans-serif;
-      font-size: 17x;
-      text-decoration: none;
-      border-bottom: solid 4px #627295;
-      border-radius: 3px;
-      text-align: center;
-      line-height: 30px;
-      height: 30px;
-      width: 150px;
-      color: black;
-      -webkit-transition: all .3s;
-      transition: all .3s;
-    }
-    a.user-btn:hover {
-      background-color: #d3d3d3;
-    }  
   } 
+}
+@media screen and (min-width:480px) {
+  #nav-open {
+    display:none;
+  }
 }
