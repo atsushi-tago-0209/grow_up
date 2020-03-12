@@ -9,7 +9,8 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.date :schedule,  null:false
       t.time :time,      null:false
       t.time :endtime,   null:false
-      t.text :capacity,  null:false
+      t.integer :capacity,  null:false
+      t.integer :fee ,    null:false
       # t.references :category, foreign_key: true
       t.timestamps
     end
