@@ -24,7 +24,7 @@ class PostsController < ApplicationController
 
   def create
     if Post.create(post_params)
-      redirect_to ""
+      render "create"
     else
       render "new"
     end
@@ -56,6 +56,7 @@ class PostsController < ApplicationController
   end
 
   def set_post
+    # binding.pry
     @post = Post.find(params[:id])
   end
 

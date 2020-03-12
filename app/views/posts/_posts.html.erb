@@ -2,11 +2,11 @@
   <div class= "inner">
     <%= link_to(post_path(post.id), class: "studies_title") do %> 
     <div class="box">
-      <%= image_tag post.image.to_s ,:size =>'556x225'%>
+      <%= image_tag post.image.to_s %>
     </div>
     <div class="detail">
       <div class= "project-detail">
-        <div class="iine!">いいね</div>
+        <%# <div class="iine!">いいね</div> %>
       </div>
       <h1 class="project-title">
         <%= link_to post.title, post_path(post.id), class: "studies_title" %> 

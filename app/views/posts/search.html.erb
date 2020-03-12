@@ -2,7 +2,7 @@
   <% @posts.each do |kekka| %>
   <div class = "studies">
   <div class= "inner">
-    <%=link_to(('/posts/:id'),class:"innerlink") do%>
+    <%=link_to post_path(@posts.ids),class:"innerlink" do%>
     <div class="box">
       <%= image_tag kekka.image.to_s ,:size =>'550x250'%> 
     </div>
