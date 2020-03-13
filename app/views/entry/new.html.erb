@@ -4,6 +4,6 @@
   </div>
   <p class="confirmation">イベント運営者に、ご登録いただいたメールアドレスと名前、所属をお伝えします。</p>
   <div class="entry">
-  <%=link_to "申し込みを完了する", post_entry_index_path(@post.id), class:"entrycreate" %>
+  <%=link_to "申し込みを完了する", post_entry_index_path(@post.id), method: "POST", class:"entrycreate" %>
   </div>
 </div >
