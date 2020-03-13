@@ -13,7 +13,7 @@ class EntryController < ApplicationController
 
   private
   def entry_params
-    params.require(:entries).permit(:user_id,:post_id).merge(user_id: current_user.id)
+    params.permit(:post_id).merge(user_id: current_user.id)
   end
 
   def post_entry
