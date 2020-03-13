@@ -21,10 +21,8 @@ class PostsController < ApplicationController
     @post = Post.new
     @targets = Target.all
     @category_parent_array = ["---"]
-    @parents = Category.where.not(ancestry: nil)
-    Category.where.(ancestry: nil).pluck(:name,:id).each do |parent|
-    @category_parent_array << parent.name
-    end
+    @parents = Category.where(ancestry: nil)
+    @category_parent_array = Category.where.not(ancestry: nil).pluck(:name,:id)
   end
 
   def create
