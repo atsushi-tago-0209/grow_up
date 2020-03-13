@@ -1,5 +1,5 @@
 class EntryController < ApplicationController
-  before_action :post_entry
+  before_action :post_entry,only: [:new,:create]
   def new
   end
 
@@ -13,7 +13,7 @@ class EntryController < ApplicationController
 
   private
   def entry_params
-    params.require(:entry).permit(:title, :place, :image,:belongings, :sentence, :schedule,:time, :endtime,:capacity,{:target_ids=>[]}).merge(user_id: current_user.id)
+    params.require(:entries).permit(:user_id,:post_id).merge(user_id: current_user.id)
   end
 
   def post_entry

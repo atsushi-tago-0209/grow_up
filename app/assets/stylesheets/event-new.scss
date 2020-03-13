@@ -172,26 +172,18 @@
           margin-top: 20px;
           margin-left: 0px;
           font-size: 16px;
-          #post_time_4i{
-            height: 30px;
-            width: 80px;
-          }
-          #post_time_5i{
-            height: 30px;
-            width: 80px;
-          }
+          #post_time_4i,#post_time_5i{
+            height: 35px;
+            width: 120px;
+          }    
         }
         .endtime{
           width: 50%;
           color: black;
           margin-top: 20px;
-          #post_endtime_4i{
-            height: 30px;
-            width: 90px;
-          }
-          #post_endtime_5i{
-            height: 30px;
-            width: 90px;
+          #post_endtime_4i,#post_endtime_5i{
+            height: 35px;
+            width: 120px;
           }
         }
       }
@@ -201,6 +193,11 @@
         margin-top: 20px;
         width: 100%;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
+        #post_category_id{
+          height: 40px;
+          width: 150px;
+          font-size: 18px;
+        }
         #post_place{
           margin-left: 0;
           width: 100%;
