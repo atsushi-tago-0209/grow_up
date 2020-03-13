@@ -20,10 +20,18 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @targets = Target.all
+    @category_parent_array = ["---"]
+    @parents = Category.where.not(ancestry: nil)
+    Category.where.(ancestry: nil).pluck(:name,:id).each do |parent|
+    @category_parent_array << parent.name
+    end
   end
 
   def create
-    if Post.create(post_params)
+    # binding.pry
+    @post = Post.new(post_params)
+    if @post.save
+      flash[:notice] = "投稿を作成しました"
       render "create"
     else
       render "new"
@@ -56,13 +64,12 @@ class PostsController < ApplicationController
   end
 
   def set_post
-    # binding.pry
     @post = Post.find(params[:id])
   end
 
   private
   def post_params
-    params.require(:post).permit(:title, :place, :image,:belongings, :sentence, :schedule,:time, :endtime,:capacity,:fee,{:target_ids=>[]}).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :place, :image,:belongings, :sentence, :category_id,:schedule,:time, :endtime,:capacity,:fee,{:target_ids=>[]}).merge(user_id: current_user.id)
   end
 
   def search_params
