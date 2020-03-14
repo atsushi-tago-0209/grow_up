@@ -43,4 +43,3 @@ sikoku.children.create([{name: "徳島"},{name: "香川"},{name: "愛媛"},{name
 
 kyuusyuu = Category.create(name: "九州")
 kyuusyuu.children.create([{name: "福岡"},{name: "佐賀"},{name: "長崎"},{name: "大分"},{name: "熊本"},{name: "鹿児島"},{name: "沖縄"}])
-
