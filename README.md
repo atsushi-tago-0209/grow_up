@@ -1,27 +1,35 @@
 # README
 
-# grow_up
+## grow_up
 「grow_up」は教師用の研修を主催者として計画して投稿したり、参加者として申し込んだりすることができるアプリケーションです。
 
-# Requirement
+
+## Requirement
 Rails 5.2.4.1
 
-# Function
+
+## Function
 - ユーザー登録
 - ログイン、ログアウト機能
 - 研修投稿機能
+- 研修申し込み機能
 - 研修編集機能
 - 画像挿入機能
-- キーワード、カレンダー、地域での絞り込み検索機能
+- キーワード検索機能
+- カレンダー検索機能
+- 地域での絞り込み検索機能
 - ページネーション機能
 
 
-# Demo
+## Demo
 - 申し込み機能
  https://gyazo.com/84a716a9dbca749d428181d55cd8bfe6
+- イベント作成
+ https://gyazo.com/1dc3d16f1f6c48635d94e6d30f8faff5
 
-# Author
-*     Name：AtsushiTago 
+
+## Author
+*    Name : AtsushiTago 
 * Twitter : https://twitter.com/assy0209
  
 
