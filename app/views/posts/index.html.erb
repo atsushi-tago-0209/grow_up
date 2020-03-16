@@ -25,7 +25,9 @@
         <% @posts.each do |post| %>
         <%= render partial: "posts", locals: { post: post } %>
         <% end %>
-        <%= paginate(@posts) %>
+        <div class ="mb-3">
+        <%=paginate @posts%>
+        <%=page_entries_info @posts%>
     </div>
   </div>
 </div>
