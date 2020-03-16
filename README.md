@@ -57,7 +57,6 @@
 ## DB設計
 - https://gyazo.com/6a5acc74b5b325b4c23586e633dc6863
 
-
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
