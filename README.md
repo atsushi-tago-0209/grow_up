@@ -9,9 +9,13 @@
 
 ## Requirement
 - Rails 5.2.4.1
+- Ruby/MySQL/Github/AWS/Visual Studio Code
 
 ## 接続先情報
 - http://18.180.123.106/
+
+# Githubリポジトリ
+- https://github.com/atsushi-tago-0209/grow_up 
 
 # テスト用アカウント
 - 名前 山田 太郎
