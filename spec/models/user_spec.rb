@@ -16,7 +16,7 @@ describe User do
     it "is invalid without a last_name" do
       user = build(:user, last_name: nil)
       user.valid?
-      expect(user.errors[:lasst_name]).to include("can't be blank")
+      expect(user.errors[:last_name]).to include("can't be blank")
     end
 
     it "is invalid without a first_name_kana" do
