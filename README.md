@@ -18,10 +18,10 @@
 - https://github.com/atsushi-tago-0209/grow_up 
 
 # テスト用アカウント
-- 名前 山田 太郎
-- 名前（カナ）ヤマダ タロウ
-- メールアドレス: y@gmail.com
-- パスワード: yyyyyy
+- 名前 テスト 太郎
+- 名前（カナ）テスト タロウ
+- メールアドレス: test@gmail.com
+- パスワード: 000000
 
 
 ## Function
