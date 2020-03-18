@@ -10,6 +10,8 @@ FactoryBot.define do
     capacity       {"20"}
     fee            {"1500"}
     category_id    {"2"}
+    user_id        {"1"}
+    created_at { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
   end
 
 end
