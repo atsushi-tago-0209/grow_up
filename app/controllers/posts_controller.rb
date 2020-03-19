@@ -38,6 +38,7 @@ class PostsController < ApplicationController
   def show
     @posts = Post.includes(:user)
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(8)
+    # @like = Like.new
   end
 
   def edit
