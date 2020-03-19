@@ -2,8 +2,10 @@ require 'rails_helper'
 describe Post do
   describe '#create' do
 
-    it "もれがないように全て記入する" do
-      post = build(:post)
+    it "is valid with a post" do
+      user = create(:user)
+      category = create(:category)
+      post = build(:post,user_id: user.id,category_id: category.id)
       expect(post).to be_valid
     end
     
