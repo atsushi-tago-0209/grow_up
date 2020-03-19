@@ -30,6 +30,7 @@ describe PostsController , type: :controller do
     end
 
     it "renders the :edit template" do
+      post = create(:post)
       get :edit, params: { id: post }
       expect(response).to render_template :edit
     end

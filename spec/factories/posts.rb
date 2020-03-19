@@ -1,5 +1,4 @@
 FactoryBot.define do
-
   factory :post do
     title          {"研修"}
     place          {"練馬区"}
@@ -9,8 +8,9 @@ FactoryBot.define do
     endtime        {"13:00:00"}
     capacity       {"20"}
     fee            {"1500"}
-    category_id    {"2"}
-    user_id        {"1"}
+    belongings     {"ペン"}
+    user
+    category
     created_at { Faker::Time.between(from: DateTime.now - 2, to: DateTime.now) }
   end
 
