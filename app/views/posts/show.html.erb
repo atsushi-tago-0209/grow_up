@@ -57,6 +57,9 @@
           </div>
     </div>
   </div>
+  <div class="iine!">
+    いいね！<%=render partial:"like", locals: { post: @post }%>
+  </div>
   <div class="apply-box">
       <%= link_to"申し込む",new_post_entry_path(@post.id), class: "apply" %>
     </div>

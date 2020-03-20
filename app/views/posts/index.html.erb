@@ -22,9 +22,9 @@
       <div class="label-search">
         <p class="label"> <  研修一覧  > </p>
       </div>
-        <% @posts.each do |post| %>
-        <%= render partial: "posts", locals: { post: post } %>
-        <% end %>
+      <div class="label-posts">
+        <%= render @posts%>
+      </div>
         <div class ="mb-3">
         <%=paginate @posts%>
         <%=page_entries_info @posts%>

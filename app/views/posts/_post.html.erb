@@ -1,19 +1,20 @@
 <div class = "studies">
   <div class= "inner">
     <%= link_to(post_path(post.id), class: "studies_title") do %> 
-    <div class="box">
-      <%= image_tag post.image.to_s %>
-    </div>
-    <div class="detail">
-      <div class= "project-detail">
-        <%# <div class="iine!">いいね</div> %>
+      <div class="box">
+        <%= image_tag post.image.to_s %>
       </div>
+      <div class="detail">
+        <td id="like-<%= post.id %>">
+        <%=render partial:"like", locals: { post: post }%>
+        </td>
+      <%# </div> %>
       <h1 class="project-title">
         <%= link_to post.title, post_path(post.id), class: "studies_title" %> 
       </h1>
-      <p class="project-excerpt">
+      <div class="project-excerpt">
          <%= post.sentence %>
-      </p>
+      </div>
         <div class="organizername">
         </div>
       <div class ="place"> 日付:<%= post.schedule.strftime("%Y年%-m月%-d日(%a)") %>  開催時刻:<%= post.time.strftime('%H:%M') %> 場所:<%= post.place%> </div>
