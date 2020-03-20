@@ -2,14 +2,14 @@ class PostsController < ApplicationController
   before_action :set_post ,only: [:show, :edit, :update]
 
   def index
-    @posts = Post.all
+    
     @keyword = Post.ransack(params[:q])
-    @posts = @keyword.result(distinct: true)
+    # @posts = @keyword.result(distinct: true)
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(8)
     @parents = Category.where(ancestry: nil)
     @category_parent_array= Category.where(ancestry: nil).pluck(:name,:id)
     @category_parent_array.prepend(["すべて",""])
-    @parents = Category.all.order("id ASC").limit(8)
+    # @like = Like.create(user_id: current_user.id, post_id: @post.id)
   end
 
   def search
