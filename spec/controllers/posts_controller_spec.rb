@@ -14,11 +14,25 @@ describe PostsController , type: :controller do
       expect(response).to render_template :index
     end
   end
-
+  
   describe 'GET #new' do
     it "renders the :new template" do
       get :new
       expect(response).to render_template :new
+    end
+  end
+
+  describe 'GET #show' do
+    it  "populates an array of posts ordered by created_at DESC" do
+      post = create(:post)
+      get :show, params: { id: post }
+      expect(assigns(:post)).to eq post
+    end
+
+    it "renders the :show template" do
+      post = create(:post)
+      get :show, params: { id: post }
+      expect(response).to render_template :show
     end
   end
 
