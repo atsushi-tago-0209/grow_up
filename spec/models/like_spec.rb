@@ -1,5 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe Like, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Like ,type: :model do
+  describe '#create' do
+    it "is valid with user and post" do
+      like = create(:like)
+      expect(like).to be_valid
+    end
+  end
 end

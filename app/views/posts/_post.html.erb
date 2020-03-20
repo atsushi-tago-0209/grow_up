@@ -5,10 +5,9 @@
         <%= image_tag post.image.to_s %>
       </div>
       <div class="detail">
-        <td id="like-<%= post.id %>">
-        <%=render partial:"like", locals: { post: post }%>
-        </td>
-      <%# </div> %>
+        <div id="like-<%= post.id %>">
+        <%=render partial:"posts/like", locals: { post: post }%>
+        </div>
       <h1 class="project-title">
         <%= link_to post.title, post_path(post.id), class: "studies_title" %> 
       </h1>

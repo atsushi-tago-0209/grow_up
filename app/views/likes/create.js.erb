@@ -1,3 +1,1 @@
-<%# $(".label-posts").html("<%= j(render(partial: 'posts/post',collection:@posts ,as: :post )) %>
-
-$("#like-<%= @post.id %>").html("<%= j(render partial: 'posts/like', locals: { post: @post }) %>");
+$("#like-<%= @post.id %>").html("<%= j(render partial: 'posts/like', locals: { post: @post,like: @like }) %>");

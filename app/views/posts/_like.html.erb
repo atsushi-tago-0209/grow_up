@@ -1,6 +1,5 @@
-
 <% if Like.find_by(user_id: current_user.id , post_id: post.id) %>
-  <%= link_to "/posts/#{post.id}/likes/", method: :delete ,remote: true do %>
+  <%= link_to "/posts/#{post.id}/likes", method: :delete ,remote: true do %>
     <i class="fas fa-heart"></i>
   <% end %>
 <% else %>
