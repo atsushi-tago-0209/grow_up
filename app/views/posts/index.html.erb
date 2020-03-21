@@ -5,7 +5,7 @@
     <div class="study-main-left">
       <div class="container">
         <%= search_form_for @keyword,enforce_utf8: false, url:search_path do |f| %>
-          <%= f.label :title_or_place_or_target, "Keyword" %> 
+          <%= f.label :title_or_place_or_target, "Keyword" ,id="keyword"%> 
           <%= f.search_field :title_or_place_or_belongings_or_sentence_or_schedule_cont ,class:"search",placeholder:"キーワード検索" %> 
           <%= f.label :日付で検索 %>
           <%= f.date_field :schedule_gteq, include_blank: true %> 

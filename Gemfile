@@ -83,4 +83,5 @@ gem 'fog-aws'
 gem 'mini_magick'
 gem 'ransack'
 gem 'ancestry'
-
+gem 'bootstrap-sass'
+gem 'slim-rails'
