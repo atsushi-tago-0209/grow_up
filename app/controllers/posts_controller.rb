@@ -24,13 +24,19 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    if @post.save
-      flash[:notice] = "投稿を作成しました"
-      render "create"
-    else
-      render "new"
+    @post = current_user.posts.new(post_params)
+    if params[:back].present?
+      render :new
+      return
     end
+  
+    if @post.save
+      PostMailer.creation_email(@post).deliver_now
+      redirect_to root_path, notice:"タスクを登録しました。"
+    else
+      render :new
+    end
+    
   end
 
   def show

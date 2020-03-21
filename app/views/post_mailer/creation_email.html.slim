@@ -1,0 +1,38 @@
+| 以下のタスクを作成しました。
+ul
+  li
+    |  名称:
+    =@post.title
+  li
+    |  詳しい説明:
+    =simple_format(@post.sentence)
+  li
+    |  場所:
+    =@post.place
+  li
+    |  イメージ画像:
+    =@post.image
+  li
+    |  持ち物:
+    =@post.belongings
+  li
+    |  場所:
+    =@post.schedule
+  li
+    |  開始時刻:
+    =@post.time
+  li
+    |  終了時刻:
+    =@post.endtime
+  li
+    |  定員:
+    =@post.capacity
+  li
+    |  参加費:
+    =@post.fee
+  li
+    |  主催者:
+    =@post.user_id
+  li
+    |  都道府県:
+    =@post.category_id
