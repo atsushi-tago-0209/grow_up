@@ -5,9 +5,12 @@
         <%= image_tag post.image.to_s %>
       </div>
       <div class="detail">
+      <%if user_signed_in? %>
         <div id="like-<%= post.id %>">
         <%=render partial:"posts/like", locals: { post: post }%>
         </div>
+        <%else%>
+        <%end%>
       <h1 class="project-title">
         <%= link_to post.title, post_path(post.id), class: "studies_title" %> 
       </h1>

@@ -57,5 +57,17 @@ describe Post do
       expect(post.errors[:fee]).to include("を入力してください")
     end
 
+    # it "is invalid without a category" do
+    #   post = build(:post, category: "")
+    #   post.valid?
+    #   expect(post.errors[:category]).to include("を入力してください")
+    # end
+
+    # it "is invalid without a user" do
+    #   post = build(:post, user: "")
+    #   post.valid?
+    #   expect(post.errors[:user]).to include("を入力してください")
+    # end
+   
   end
 end

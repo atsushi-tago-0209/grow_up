@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :set_post ,only: [:show, :edit, :update]
 
   def index
-    
     @keyword = Post.ransack(params[:q])
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(8)
     @parents = Category.where(ancestry: nil)
