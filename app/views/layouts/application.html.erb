@@ -8,6 +8,7 @@
     <script>src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900i&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -23,8 +24,8 @@
             <label class="nav-unshown" id="nav-close" for="nav-input"></label>
             <div id="nav-content">
               <% if user_signed_in? %>
-                <%# <%= link_to "マイページ", user_path(current_user), class: "user-btn" %><br>
                 <%= link_to "イベント作成", new_post_path, class: "new_event" %><br>
+                <%= link_to "マイページ", user_path(current_user), class: "user-btn"%><br>
                 <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn-new" %>
               <% else %>
                 <%= link_to "ログイン", new_user_session_path, class: "new_event" %> 
@@ -38,9 +39,6 @@
       <div class = "study">
         <%= yield %>
       </div>
-      <%# <div class="study-footer">
-        教師と教師の学びをつなげるプラットフォーム
-      </div> %>
     </div>
   </body>
 </html>

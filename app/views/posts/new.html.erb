@@ -48,7 +48,6 @@
               </div>
             </div >
             <div class ="place">場所<br>
-              <%# <%= form.select :category_id,Category.all.map { |category| [category.name, category.id] },class:"categoryselect" %>
               <%= form.select :category_id,@category_parent_array,class:"categoryselect"%>
               <%= form.text_field :place ,class:"placefiled",placeholder: :住所を入力してください %>
             </div>

@@ -76,7 +76,7 @@
 
 ### Association
 - has_many :posts
--  has_many :entries
+- has_many :entries
 
 ## postsテーブル
 |Column|Type|Options|
