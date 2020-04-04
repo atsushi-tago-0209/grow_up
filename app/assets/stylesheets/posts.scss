@@ -2,6 +2,7 @@
   min-height: 100vh;
   display: flex;
   flex-flow: column;
+  font-family: ‘Quicksand’, ‘ヒラギノ角ゴシック’, ‘メイリオ’ ,sans-serif;
   .study{
     width: 100vw;
     flex: 1;
@@ -162,7 +163,6 @@
               cursor: pointer;
               width: 100%;
               padding-bottom: 30px;
-              // position: relative;
               border-bottom: 1px solid #e3e3e3;
               .studies_title{
                 cursor: pointer;
